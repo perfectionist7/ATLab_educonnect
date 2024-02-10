@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "316513612252",
+    "project_id": "educonnect-fd8a9",
+    "storage_bucket": "educonnect-fd8a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316513612252:android:15959132c354a000dfdf19",
+        "android_client_info": {
+          "package_name": "com.example.educonnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDknEjvWBAPvnDVbZja0wnxnEUc-Oss9_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

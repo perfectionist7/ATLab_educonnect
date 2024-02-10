@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:educonnect/login.dart';
+import 'package:educonnect/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -101,7 +103,13 @@ class _LandingState extends State<Landing> {
                   height: (60 / 784) * screenHeight,
                   width: (240 / 384) * screenWidth,
                   child: ElevatedButton(
-                    onPressed: () async {},
+                    onPressed: () async {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()),
+                      );
+                    },
                     child: Text(
                       'Get Started!',
                       style: GoogleFonts.poppins(
