@@ -230,7 +230,7 @@ class _SignupPageState extends State<SignupPage> {
                                         fontWeight: FontWeight.w600,
                                         color: Colors.white)),
                                 style: ElevatedButton.styleFrom(
-                                  primary: Color(0xFF4178F3),
+                                  backgroundColor: Color(0xFF4178F3),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(14)),
                                 )),
