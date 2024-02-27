@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'youtube_video_player.dart';
 import 'drawer_content.dart';
 
@@ -10,10 +11,8 @@ import 'checkvideos.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class VideoList extends StatefulWidget {
-  const VideoList({
-    Key? key,
-  }) : super(key: key);
-
+  const VideoList({Key? key, required this.classid}) : super(key: key);
+  final int classid;
   @override
   State<VideoList> createState() => _VideoListState();
 }
@@ -24,13 +23,16 @@ double screenWidth = 0.0;
 bool isScreenLock = false;
 
 class _VideoListState extends State<VideoList> {
+  int newclassid = 0;
   final ScrollController _scrollController = ScrollController();
   bool _isLoading = true;
   getCurrentUser() async {}
 
   @override
   void initState() {
+    newclassid = widget.classid;
     _initializeVideoPlayer();
+
     super.initState();
   }
 
@@ -38,7 +40,17 @@ class _VideoListState extends State<VideoList> {
     setState(() {
       _isLoading = true; // Set loading to true when initializing
     });
-    await VideoSourcesManager.fetchDataFromSpreadsheet();
+    if (newclassid == 0) {
+      await VideoSourcesManager.fetchDataFromSpreadsheet();
+    } else if (newclassid == 1) {
+      await VideoSourcesManager.fetchDataFromSpreadsheet1();
+    } else if (newclassid == 2) {
+      await VideoSourcesManager.fetchDataFromSpreadsheet2();
+    } else if (newclassid == 3) {
+      await VideoSourcesManager.fetchDataFromSpreadsheet3();
+    } else {
+      Fluttertoast.showToast(msg: "Error fetching data from spreadsheet");
+    }
 
     // print(VideoSourcesManager.videoSourcesData);
     // print(VideoSourcesManager.videoSourcesData.length);

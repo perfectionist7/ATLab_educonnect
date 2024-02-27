@@ -116,7 +116,7 @@ class _DashboardState extends State<Dashboard> {
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white)),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF4178F3),
+                              backgroundColor: Color(0xff8FB93D),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(14)),
                             )),
@@ -151,14 +151,31 @@ class _DashboardState extends State<Dashboard> {
                         width: 267,
                         child: ElevatedButton(
                             onPressed: () async {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ObjectDetectorView()),
-                              );
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //       builder: (context) => ObjectDetectorView()),
+                              // );
                               // showSpinner = false;
                             },
-                            child: Text('Chat with us!',
+                            child: Text('Chat with us! ',
+                                style: GoogleFonts.exo(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white)),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xff8FB93D),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(14)),
+                            )),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(70, 40, 70, 0),
+                        height: 60,
+                        width: 267,
+                        child: ElevatedButton(
+                            onPressed: () async {},
+                            child: Text('Rhymes & Songs',
                                 style: GoogleFonts.exo(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,
@@ -195,7 +212,7 @@ class _DashboardState extends State<Dashboard> {
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white)),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF4178F3),
+                              backgroundColor: Color(0xff8FB93D),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(14)),
                             )),

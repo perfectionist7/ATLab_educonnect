@@ -51,33 +51,15 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Column(children: [
                   Container(
-                    margin: EdgeInsets.only(
-                      top: 60,
-                      left: 20,
-                      right: 110,
-                    ),
-                    child: Text(
-                      'Welcome\nBack!',
-                      style: GoogleFonts.exo(
-                        fontSize: 44,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
+                    margin: EdgeInsets.only(top: 30, right: 10),
+                    child: Image.asset(
+                      "assets/register.png",
+                      height: screenHeight * 0.3,
+                      width: screenWidth * 0.7,
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 47, left: 0, right: 30),
-                    child: Text(
-                      'Log in into your account.',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.exo(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: const Color(0xFF4178F3)),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(20, 50, 180, 0),
+                    margin: EdgeInsets.fromLTRB(20, 30, 180, 0),
                     child: Text('Email address',
                         style: GoogleFonts.exo(
                           fontSize: 18,

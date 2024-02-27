@@ -1,6 +1,8 @@
 import 'package:educonnect/checkclass.dart';
 import 'package:educonnect/dashboard.dart';
+import 'package:educonnect/object_detector_view.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
 import 'main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -37,7 +39,7 @@ class _DrawerContentState extends State<DrawerContent> {
         padding: EdgeInsets.zero,
         children: [
           SizedBox(
-            height: (300 / 784) * screenHeight,
+            height: (250 / 784) * screenHeight,
             child: DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -85,7 +87,8 @@ class _DrawerContentState extends State<DrawerContent> {
             ),
           ),
           ListTile(
-            contentPadding: EdgeInsets.only(left: (35 / 384) * screenWidth),
+            contentPadding: EdgeInsets.only(
+                top: (10 / 784) * screenHeight, left: (35 / 384) * screenWidth),
             // leading: ImageIcon(
             //   AssetImage('assets/images/home_icon.png'),
             //   color: Color(0xff0A1621),
@@ -128,11 +131,6 @@ class _DrawerContentState extends State<DrawerContent> {
           ),
           ListTile(
             contentPadding: EdgeInsets.only(left: (35 / 384) * screenWidth),
-            // leading: ImageIcon(
-            //   AssetImage('assets/images/owl-icon-0.png'),
-            //   size: 30,
-            //   color: Color(0xff9D78BB),
-            // ),
             title: Text(
               'begin identifying',
               style: GoogleFonts.poppins(
@@ -142,40 +140,38 @@ class _DrawerContentState extends State<DrawerContent> {
               ),
             ),
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => const OwlSoftToy()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ObjectDetectorView()),
+              );
             },
           ),
-          // ListTile(
-          //   contentPadding: EdgeInsets.only(left: (35 / 384) * screenWidth),
-          //   leading: ImageIcon(
-          //     AssetImage('assets/images/motion_detection_icon.png'),
-          //     color: Color(0xff8FB93D),
-          //   ),
-          //   title: Text(
-          //     'motion detect',
-          //     style: GoogleFonts.poppins(
-          //       fontSize: (16 / 784) * screenHeight,
-          //       fontWeight: FontWeight.w500,
-          //       color: Color(0xff8FB93D),
-          //     ),
-          //   ),
-          //   onTap: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //           builder: (context) => const Motion_Detect_Descrp()),
-          //     );
-          //   },
-          // ),
           ListTile(
             contentPadding: EdgeInsets.only(left: (35 / 384) * screenWidth),
-            // leading: ImageIcon(
-            //   AssetImage('assets/images/settings_icon.png'),
-            //   color: Color(0xff0A1621),
-            // ),
+            title: Text(
+              'chat with us',
+              style: GoogleFonts.poppins(
+                fontSize: (16 / 784) * screenHeight,
+                fontWeight: FontWeight.w500,
+                color: Color(0xff0A1621),
+              ),
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            contentPadding: EdgeInsets.only(left: (35 / 384) * screenWidth),
+            title: Text(
+              'rhymes (motion detection)',
+              style: GoogleFonts.poppins(
+                fontSize: (16 / 784) * screenHeight,
+                fontWeight: FontWeight.w500,
+                color: Color(0xff0A1621),
+              ),
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            contentPadding: EdgeInsets.only(left: (35 / 384) * screenWidth),
             title: Text(
               'about us',
               style: GoogleFonts.poppins(
@@ -184,13 +180,7 @@ class _DrawerContentState extends State<DrawerContent> {
                 color: Color(0xff0A1621),
               ),
             ),
-            onTap: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (context) =>
-              //             const Settings())); // add settings page navigator here
-            },
+            onTap: () {},
           ),
           ListTile(
             contentPadding: EdgeInsets.only(left: (35 / 384) * screenWidth),

@@ -19,7 +19,137 @@ class VideoSourcesManager {
     const spreadsheetId = "1I4nxbkwuZ-yyE-VSQNMXNDJs5aATlCV2f__N7jHnQ5M";
 
     // The range of cells you want to read from (e.g., "Sheet1!A2:C")
-    const range = "Sheet1!A2:C"; // Adjust the sheet name and range accordingly
+    const range =
+        "Nursery-KG!A2:C"; // Adjust the sheet name and range accordingly
+
+    try {
+      var response = await sheets.SheetsApi(client)
+          .spreadsheets
+          .values
+          .get(spreadsheetId, range);
+
+      // Parse and store the data in audioSourcesData
+      if (response.values != null && response.values!.isNotEmpty) {
+        for (var row in response.values!) {
+          // Ensure the row has three columns (URI, ID, Title)
+          if (row.length >= 3) {
+            final String uri = row[2] as String;
+            final String id = row[0] as String;
+            final String title = row[1] as String;
+            videoSourcesData.add({
+              'uri': uri,
+              'id': id,
+              'title': title,
+            });
+          }
+        }
+      }
+    } catch (e) {
+      // print("Error reading data: $e");
+    } finally {
+      client.close();
+    }
+  }
+
+  static Future<void> fetchDataFromSpreadsheet1() async {
+    videoSourcesData.clear();
+    // Load and authenticate using the credentials JSON file
+    final credentials = auth.ServiceAccountCredentials.fromJson(
+        await loadServiceAccountCredentials());
+    final client = await auth.clientViaServiceAccount(
+        credentials, [sheets.SheetsApi.spreadsheetsReadonlyScope]);
+
+    // Spreadsheet ID can be found in the URL of the spreadsheet
+    const spreadsheetId = "1I4nxbkwuZ-yyE-VSQNMXNDJs5aATlCV2f__N7jHnQ5M";
+
+    // The range of cells you want to read from (e.g., "Sheet1!A2:C")
+    const range = "1-4!A2:C"; // Adjust the sheet name and range accordingly
+
+    try {
+      var response = await sheets.SheetsApi(client)
+          .spreadsheets
+          .values
+          .get(spreadsheetId, range);
+
+      // Parse and store the data in audioSourcesData
+      if (response.values != null && response.values!.isNotEmpty) {
+        for (var row in response.values!) {
+          // Ensure the row has three columns (URI, ID, Title)
+          if (row.length >= 3) {
+            final String uri = row[2] as String;
+            final String id = row[0] as String;
+            final String title = row[1] as String;
+            videoSourcesData.add({
+              'uri': uri,
+              'id': id,
+              'title': title,
+            });
+          }
+        }
+      }
+    } catch (e) {
+      // print("Error reading data: $e");
+    } finally {
+      client.close();
+    }
+  }
+
+  static Future<void> fetchDataFromSpreadsheet2() async {
+    videoSourcesData.clear();
+    // Load and authenticate using the credentials JSON file
+    final credentials = auth.ServiceAccountCredentials.fromJson(
+        await loadServiceAccountCredentials());
+    final client = await auth.clientViaServiceAccount(
+        credentials, [sheets.SheetsApi.spreadsheetsReadonlyScope]);
+
+    // Spreadsheet ID can be found in the URL of the spreadsheet
+    const spreadsheetId = "1I4nxbkwuZ-yyE-VSQNMXNDJs5aATlCV2f__N7jHnQ5M";
+
+    // The range of cells you want to read from (e.g., "Sheet1!A2:C")
+    const range = "5-8!A2:C"; // Adjust the sheet name and range accordingly
+
+    try {
+      var response = await sheets.SheetsApi(client)
+          .spreadsheets
+          .values
+          .get(spreadsheetId, range);
+
+      // Parse and store the data in audioSourcesData
+      if (response.values != null && response.values!.isNotEmpty) {
+        for (var row in response.values!) {
+          // Ensure the row has three columns (URI, ID, Title)
+          if (row.length >= 3) {
+            final String uri = row[2] as String;
+            final String id = row[0] as String;
+            final String title = row[1] as String;
+            videoSourcesData.add({
+              'uri': uri,
+              'id': id,
+              'title': title,
+            });
+          }
+        }
+      }
+    } catch (e) {
+      // print("Error reading data: $e");
+    } finally {
+      client.close();
+    }
+  }
+
+  static Future<void> fetchDataFromSpreadsheet3() async {
+    videoSourcesData.clear();
+    // Load and authenticate using the credentials JSON file
+    final credentials = auth.ServiceAccountCredentials.fromJson(
+        await loadServiceAccountCredentials());
+    final client = await auth.clientViaServiceAccount(
+        credentials, [sheets.SheetsApi.spreadsheetsReadonlyScope]);
+
+    // Spreadsheet ID can be found in the URL of the spreadsheet
+    const spreadsheetId = "1I4nxbkwuZ-yyE-VSQNMXNDJs5aATlCV2f__N7jHnQ5M";
+
+    // The range of cells you want to read from (e.g., "Sheet1!A2:C")
+    const range = "9-12!A2:C"; // Adjust the sheet name and range accordingly
 
     try {
       var response = await sheets.SheetsApi(client)

@@ -203,7 +203,9 @@ class _CheckClassState extends State<CheckClass> {
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        VideoList()));
+                                                        VideoList(
+                                                          classid: index,
+                                                        )));
                                           },
                                         ),
                                       );

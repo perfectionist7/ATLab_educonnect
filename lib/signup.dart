@@ -46,18 +46,17 @@ class _SignupPageState extends State<SignupPage> {
                     parent: AlwaysScrollableScrollPhysics()),
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 34, top: 60, right: 63),
-                    child: Text('Create a new \naccount',
-                        style: GoogleFonts.exo(
-                          fontSize: 36,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
-                        )),
+                    margin: EdgeInsets.only(top: 0, right: 10),
+                    child: Image.asset(
+                      "assets/welcome.png",
+                      height: screenHeight * 0.3,
+                      width: screenWidth * 0.7,
+                    ),
                   ),
                   Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.fromLTRB(20, 50, 250, 0),
+                        margin: EdgeInsets.fromLTRB(20, 10, 250, 0),
                         child: Text('Name',
                             style: GoogleFonts.exo(
                               fontSize: 18,
@@ -93,7 +92,7 @@ class _SignupPageState extends State<SignupPage> {
                                 fontFamily: 'Rubik',
                                 fontSize: 15,
                                 color: Colors.blueGrey),
-                            contentPadding: EdgeInsets.fromLTRB(16, 18, 19, 19),
+                            contentPadding: EdgeInsets.fromLTRB(16, 15, 19, 19),
                             border: InputBorder.none,
                           ),
                         ),
@@ -101,7 +100,7 @@ class _SignupPageState extends State<SignupPage> {
                       Column(
                         children: [
                           Container(
-                            margin: EdgeInsets.fromLTRB(20, 25, 180, 0),
+                            margin: EdgeInsets.fromLTRB(20, 15, 180, 0),
                             child: Text('Email address',
                                 style: GoogleFonts.exo(
                                   fontSize: 18,
@@ -138,13 +137,13 @@ class _SignupPageState extends State<SignupPage> {
                                     fontSize: 15,
                                     color: Colors.blueGrey),
                                 contentPadding:
-                                    EdgeInsets.fromLTRB(16, 18, 19, 19),
+                                    EdgeInsets.fromLTRB(16, 15, 19, 19),
                                 border: InputBorder.none,
                               ),
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.fromLTRB(20, 25, 220, 0),
+                            margin: EdgeInsets.fromLTRB(20, 15, 220, 0),
                             child: Text('Password',
                                 style: GoogleFonts.exo(
                                   fontSize: 18,
@@ -182,7 +181,7 @@ class _SignupPageState extends State<SignupPage> {
                                     fontSize: 15,
                                     color: Colors.blueGrey),
                                 contentPadding:
-                                    EdgeInsets.fromLTRB(16, 18, 19, 19),
+                                    EdgeInsets.fromLTRB(16, 15, 19, 19),
                                 border: InputBorder.none,
                                 suffixIcon: IconButton(
                                   padding: EdgeInsets.only(right: 10),
@@ -202,7 +201,7 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.fromLTRB(70, 50, 70, 0),
+                            margin: EdgeInsets.fromLTRB(70, 40, 70, 0),
                             height: 60,
                             width: 267,
                             child: ElevatedButton(

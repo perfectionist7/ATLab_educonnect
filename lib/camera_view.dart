@@ -110,7 +110,7 @@ class _CameraViewState extends State<CameraView> {
           child: FloatingActionButton(
             heroTag: Object(),
             onPressed: () => Navigator.of(context).pop(),
-            backgroundColor: Colors.black54,
+            backgroundColor: Colors.white,
             child: Icon(
               Icons.arrow_back_ios_outlined,
               size: 20,
@@ -128,7 +128,7 @@ class _CameraViewState extends State<CameraView> {
           child: FloatingActionButton(
             heroTag: Object(),
             onPressed: widget.onDetectorViewModeChanged,
-            backgroundColor: Colors.black54,
+            backgroundColor: Colors.white,
             child: Icon(
               Icons.photo_library_outlined,
               size: 25,
@@ -146,7 +146,7 @@ class _CameraViewState extends State<CameraView> {
           child: FloatingActionButton(
             heroTag: Object(),
             onPressed: _switchLiveCamera,
-            backgroundColor: Colors.black54,
+            backgroundColor: Colors.white,
             child: Icon(
               Platform.isIOS
                   ? Icons.flip_camera_ios_outlined
@@ -175,7 +175,7 @@ class _CameraViewState extends State<CameraView> {
                     min: _minAvailableZoom,
                     max: _maxAvailableZoom,
                     activeColor: Colors.white,
-                    inactiveColor: Colors.white30,
+                    inactiveColor: Colors.white,
                     onChanged: (value) async {
                       setState(() {
                         _currentZoomLevel = value;
@@ -187,7 +187,7 @@ class _CameraViewState extends State<CameraView> {
                 Container(
                   width: 50,
                   decoration: BoxDecoration(
-                    color: Colors.black54,
+                    color: Colors.black,
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   child: Padding(

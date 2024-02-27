@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
 import 'checkvideos.dart';
 import 'drawer_content.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -85,9 +84,9 @@ class _YoutubePlayerExampleState extends State<YoutubePlayerExample> {
     screenHeight = MediaQuery.of(context).size.height;
     Widget buildStart() {
       var icon = isPlaying
-          ? SizedBox(child: Image.asset('assets/images/pause.png'))
+          ? SizedBox(child: Image.asset('assets/pause.png'))
           : SizedBox(
-              child: Image.asset('assets/images/play.png'),
+              child: Image.asset('assets/play.png'),
             );
 
       return IconButton(
@@ -105,18 +104,9 @@ class _YoutubePlayerExampleState extends State<YoutubePlayerExample> {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor:
-            Colors.transparent, // Set the background color to transparent
+            Color(0xffe6f0ff), // Set the background color to transparent
         elevation: 0, // Remove the shadow from the AppBar
         toolbarHeight: (110 / 784) * screenHeight,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                  'assets/images/home_screen.png'), // Replace with your background image path
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
         actions: [
           Container(
             padding: EdgeInsets.only(
@@ -124,7 +114,7 @@ class _YoutubePlayerExampleState extends State<YoutubePlayerExample> {
               left: (180 / 384) * screenWidth,
             ), // Add some margin here
             child: IconButton(
-              icon: Image.asset('assets/images/burger_icon.png'),
+              icon: Image.asset('assets/burger_icon.png'),
               onPressed: () {
                 setState(() {
                   _scaffoldKey.currentState?.openEndDrawer();
@@ -143,8 +133,7 @@ class _YoutubePlayerExampleState extends State<YoutubePlayerExample> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/selection_page_final.png"),
-              fit: BoxFit.cover),
+              image: AssetImage("assets/onboarding.png"), fit: BoxFit.cover),
         ),
         child: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
@@ -216,8 +205,7 @@ class _YoutubePlayerExampleState extends State<YoutubePlayerExample> {
                         icon: SizedBox(
                             // height: (32 / 784) * screenHeight,
                             // width: (30 / 384) * screenWidth,
-                            child: Image.asset(
-                                'assets/images/back_buttonrhymes.png')),
+                            child: Image.asset('assets/back_buttonrhymes.png')),
                       ),
                       buildStart(),
                       IconButton(
@@ -243,8 +231,8 @@ class _YoutubePlayerExampleState extends State<YoutubePlayerExample> {
                         icon: SizedBox(
                             // height: (32 / 784) * screenHeight,
                             // width: (30 / 384) * screenWidth,
-                            child: Image.asset(
-                                'assets/images/front_buttonrhymes.png')),
+                            child:
+                                Image.asset('assets/front_buttonrhymes.png')),
                       ),
                     ],
                   ),
