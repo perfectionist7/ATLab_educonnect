@@ -140,15 +140,16 @@ class _CheckClassState extends State<CheckClass> {
                         children: [
                           Container(
                             alignment: Alignment.center,
-                            margin: EdgeInsets.fromLTRB(0.20625 * screenWidth,
-                                0, 0.20625 * screenWidth, 0),
+                            margin: EdgeInsets.fromLTRB(0.10625 * screenWidth,
+                                0, 0.10625 * screenWidth, 0),
                             child: Text(
-                              'Pick your class',
+                              'Select one of the class options',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
-                                  fontSize: (24 / 784) * screenHeight,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w300),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                           Expanded(
@@ -160,56 +161,60 @@ class _CheckClassState extends State<CheckClass> {
                                 thumbVisibility: true,
                                 controller: _scrollController,
                                 child: ListView.builder(
-                                    physics: const BouncingScrollPhysics(
-                                        parent:
-                                            AlwaysScrollableScrollPhysics()),
-                                    controller: _scrollController,
-                                    itemCount: 4,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return Container(
-                                        margin: const EdgeInsets.fromLTRB(
-                                            10, 10, 30, 20),
-                                        decoration: BoxDecoration(
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.black
-                                                    .withOpacity(0.25),
-                                                blurRadius: 4,
-                                                offset: const Offset(0,
-                                                    4), // changes position of shadow
-                                              ),
-                                            ],
-                                            border: Border.all(
-                                                color: const Color(0xff0A1621)),
-                                            color: Colors.grey[400],
-                                            borderRadius:
-                                                const BorderRadius.all(
-                                                    Radius.circular(15))),
-                                        child: ListTile(
-                                          leading: const Icon(
-                                            Icons.class_rounded,
-                                            color: Color(0xff0A1621),
+                                  physics: const BouncingScrollPhysics(
+                                    parent: AlwaysScrollableScrollPhysics(),
+                                  ),
+                                  controller: _scrollController,
+                                  itemCount: 4,
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    Color? backgroundColor = index % 2 == 0
+                                        ? Color(0xffBFDDEC)
+                                        : Color(0xff5667FD);
+                                    Color? leadingColor = index % 2 == 0
+                                        ? Colors.black
+                                        : Colors.white;
+
+                                    return Container(
+                                      margin: const EdgeInsets.fromLTRB(
+                                          10, 10, 30, 20),
+                                      decoration: BoxDecoration(
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color:
+                                                Colors.black.withOpacity(0.25),
+                                            blurRadius: 4,
+                                            offset: const Offset(0,
+                                                4), // changes position of shadow
                                           ),
-                                          title: Text(
-                                            classes[index],
-                                            style: GoogleFonts.poppins(
-                                                fontSize:
-                                                    (16 / 784) * screenHeight,
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.w400),
+                                        ],
+                                        color: backgroundColor,
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(15)),
+                                      ),
+                                      child: ListTile(
+                                        leading: Icon(Icons.class_rounded,
+                                            color: leadingColor),
+                                        title: Text(
+                                          classes[index],
+                                          style: GoogleFonts.poppins(
+                                            fontSize: (16 / 784) * screenHeight,
+                                            color: leadingColor,
+                                            fontWeight: FontWeight.w400,
                                           ),
-                                          onTap: () {
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        VideoList(
-                                                          classid: index,
-                                                        )));
-                                          },
                                         ),
-                                      );
-                                    }),
+                                        onTap: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) => VideoList(
+                                              classid: index,
+                                            ),
+                                          ));
+                                        },
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ),

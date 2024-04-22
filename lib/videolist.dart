@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/rendering.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'youtube_video_player.dart';
 import 'drawer_content.dart';
@@ -173,6 +174,12 @@ class _VideoListState extends State<VideoList> {
                                         .videoSourcesData.length,
                                     itemBuilder:
                                         (BuildContext context, int index) {
+                                      Color? backgroundColor = index % 2 == 0
+                                          ? Color(0xffBFDDEC)
+                                          : Color(0xff5667FD);
+                                      Color? leadingColor = index % 2 == 0
+                                          ? Colors.black
+                                          : Colors.white;
                                       return Container(
                                         margin: const EdgeInsets.fromLTRB(
                                             10, 10, 30, 20),
@@ -186,16 +193,14 @@ class _VideoListState extends State<VideoList> {
                                                     4), // changes position of shadow
                                               ),
                                             ],
-                                            border: Border.all(
-                                                color: const Color(0xff0A1621)),
-                                            color: Colors.grey[400],
+                                            color: backgroundColor,
                                             borderRadius:
                                                 const BorderRadius.all(
                                                     Radius.circular(15))),
                                         child: ListTile(
-                                          leading: const Icon(
+                                          leading: Icon(
                                             Icons.video_collection_rounded,
-                                            color: Color(0xff0A1621),
+                                            color: leadingColor,
                                           ),
                                           title: Text(
                                             VideoSourcesManager
@@ -204,7 +209,7 @@ class _VideoListState extends State<VideoList> {
                                             style: GoogleFonts.poppins(
                                                 fontSize:
                                                     (16 / 784) * screenHeight,
-                                                color: Colors.black,
+                                                color: leadingColor,
                                                 fontWeight: FontWeight.w400),
                                           ),
                                           onTap: () {

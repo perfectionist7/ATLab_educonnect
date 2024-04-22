@@ -57,6 +57,27 @@ dependencies:
   sheet: ^0.0.4+1
   gsheets: ^0.5.0
   youtube_player_flutter: ^9.0.0
+  audioplayers: 6.0.0
+  url_launcher: ^6.2.6
+  image_picker: ^1.1.0
+  permission_handler: ^11.3.1
+  firebase_app_indexing: ^0.2.0
+  firebase_app_check: ^0.2.2+2
+  flutter_native_splash: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
+  sensors_plus: ^3.0.2
+flutter_native_splash:
+  android: true
+  ios: true
+  fullscreen: true
+  color: "#FFFFFF"
+  image: "assets/applogo.png"
+flutter_icons:
+  adaptive_icon_background: "#E6F0FF"
+  image_path: "assets/applogo.png"
+  android: true
+  ios: true
+  remove_alpha_ios: true
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +104,7 @@ flutter:
   assets:
     - assets/
     - assets/ml/
+    - assets/sounds/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
