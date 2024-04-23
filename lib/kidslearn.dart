@@ -2,9 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:devotai/landing.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'dart:convert';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 // import 'package:devotai/selectionpage.dart';
 // import 'package:devotai/text_detector_view.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
@@ -126,11 +128,12 @@ class SplashScreenTextState extends State<SplashScreenText> {
                                     25, screenHeight * 0.10, 25, 0),
                                 child: Text(
                                   _name,
-                                  style: TextStyle(
-                                      fontFamily: 'Circular',
-                                      color: Colors.blueGrey[800],
-                                      fontSize:
-                                          0.048265306122449 * screenHeight),
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff001F3F),
+                                  ),
                                 ),
                               ),
                             ),

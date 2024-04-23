@@ -5,6 +5,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'editprofile.dart';
 import 'package:educonnect/object_detector_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'motion_detection.dart';
 import 'home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
@@ -289,7 +290,13 @@ class _DrawerContentState extends State<DrawerContent> {
                   color: Color(0xff001F3F),
                 ),
               ),
-              onTap: () async {},
+              onTap: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Motion_Detect_Descrp()),
+                );
+              },
             ),
             ListTile(
               contentPadding: EdgeInsets.only(left: (35 / 384) * screenWidth),
